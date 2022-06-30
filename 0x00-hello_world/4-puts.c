@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    puts("Geek%sforGeek%s");
-    getchar();
+    puts("Programming is like building a multilingual puzzle \n");
+    
     return 0;
 }
