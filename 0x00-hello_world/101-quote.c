@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-
 /**
  * main - print tp stderr
  * Return: Always 1 
