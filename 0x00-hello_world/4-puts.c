@@ -1,7 +1,10 @@
 #include <stdio.h>
-int main()
+/**
+*main - prints using puts
+*Return: null
+*/
+int main(void)
 {
-    puts("Geek%sforGeek%s");
-    getchar();
-    return 0;
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
