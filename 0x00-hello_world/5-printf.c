@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-*Main- prints 
+*main - prints using printf
 *Return: null
 */
 int main(void) {
