@@ -1,0 +1,1 @@
+funtions in c
