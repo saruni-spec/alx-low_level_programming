@@ -4,23 +4,23 @@
 /**
  * strncpy - Function to implement `strncpy()` function
  * @num: an int
- * @destination: an input string
- * @source: an input string
+ * @dest: an input string
+ * @src: an input string
  * Return: A pointer to the resulting string
 */
-char *strncpy(char *destination, const char *source, size_t num)
+char *_strncpy(char *dest, char *src, int n)
 {
 if (destination == NULL)
 {
 return (NULL);
 }
-char *ptr = destination;
-while (*source && num--)
+char *ptr = dest;
+while (*src && n--)
 {
-*destination = *source;
-destination++;
-source++;
+*dest = *src;
+dest++;
+src++;
 }
-*destination = '\0';
+*dest = '\0';
 return (ptr);
 }
