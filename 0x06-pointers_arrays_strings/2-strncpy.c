@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stddef.h>
 /**
  * strncpy - Function to implement `strncpy()` function
  * @num: an int
