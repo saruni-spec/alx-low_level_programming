@@ -31,7 +31,7 @@ int check_seperators(char c)
 {
 int i = 0;
 char seperators[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?', '"
-', '(', ')', '{', '}' };
+', '(, )', '{', '}' };
 for (; i < 13; i++)
 {
 if (c == seperators[i])
