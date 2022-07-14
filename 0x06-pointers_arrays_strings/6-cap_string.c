@@ -1,34 +1,31 @@
 #include "main.h"
+/**
+ * cap_string - capitalizes all words of a string
+ * @s: input string.
+ * Return: the pointer to dest.
+ */
 
-/**
- * template - check for word separators
- * @c: character
- * Return: 1 True 0 False
- */
-int template(char c)
-{
-if (c == ',' || c == ';' || c == '.' || c == '!' || 
-c == '?' || c == '"' || c == '(' || c == ')' ||
-c == '{' || c == '}' || c == ' ' || c == '\t' || c == '\n')
-return (1);
-return (0);
-}
-/**
- * cap_string - capitalize each word
- * @s: word strring
- *
- * Return: string
- */
+
 char *cap_string(char *s)
 {
-int i = 0;
-while (s[i] != '\0')
+int count = 0, i;
+int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
+if (*(s + count) >= 97 && *(s + count) <= 122)
+*(s + count) = *(s + count) - 32;
+count++;
+while (*(s + count) != '\0')
 {
-if ((s[i] >= 'a' && s[i] <= 'z') && i == 0)
-s[i] = s[i] - 'a' + 'A';
-if ((s[i] >= 'a' && s[i] <= 'z') && template(s[i - 1]))
-s[i] = s[i] - 'a' + 'A';
-i++;
+for (i = 0; i < 13; i++)
+{
+if (*(s + count) == separators[i])
+{
+if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+*(s + (count + 1)) = *(s + (count + 1)) - 32;
+break;
+}
+}
+count++;
 }
 return (s);
 }
