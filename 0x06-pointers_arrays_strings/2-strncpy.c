@@ -1,5 +1,8 @@
 #include "main.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a19de683009727cfb00b761fe17e73ee7ee2496
 /**
  * _strncpy - Entry point
  * @dest: char pinter
