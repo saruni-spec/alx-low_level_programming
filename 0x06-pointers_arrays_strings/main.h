@@ -13,4 +13,5 @@ int base10(int n);
 char *rot13(char *s);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 void print_line(char *c, int s, int l);
+void print_buffer(char *b, int size);
 
