@@ -1,19 +1,46 @@
 #include "main.h"
+
+#define WILD '*'
+
 /**
- * wildcmp - A function that compares two strings
- * @s1: First input string
- * @s2: Second input string
- * Return: 1 if strings identical and 0 in otherwise
+ * match_after_wild - check if a substring after wildcard matches s1
+ * @s1: string 1
+ * @s2: string 2
+ * @post_wild: placeholder for position right after wildcard
+ * Return: SUCCESS ? 1 : 0
  */
+
+int match_after_wild(char *s1, char *s2, char *post_wild)
+{
+	if (*s1 == END && *s2 == END)
+		return (TRUE);
+	if (*s1 == END && *s2 == WILD)
+		return (match_after_wild(s1, s2 + 1, s2 + 1));
+	if (*s1 == END && *s2 != END)
+		return (NULL);
+	if (*s2 == WILD)
+		return (match_after_wild(s1, s2 + 1, s2 + 1));
+	if (*s1 == *s2)
+		return (match_after_wild(s1 + 1, s2 + 1, post_wild));
+	else
+		return (match_after_wild(s1 + 1, post_wild, post_wild));
+}
+
+/**
+ * wildcmp - compare if string with wildcard mattches
+ * @s1: string 1
+ * @s2: string 2
+ * Return: SUCCESS ? 1 : 0
+ */
+
 int wildcmp(char *s1, char *s2)
 {
-	if (!*s1 && !*s2)
-		return (1);
+	if (*s1 == END && *s2 == END)
+		return (TRUE);
 	if (*s1 == *s2)
 		return (wildcmp(s1 + 1, s2 + 1));
-	if (*s2 == '*' && (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)))
-		return (1);
-	if (*s2 == '*' && *(s1 + 1) && *s2)
-		return (0);
-	return (0);
+	else if (*s2 == WILD)
+		return (match_after_wild(s1, (s2 + 1), (s2 + 1)));
+	else
+		return (NULL);
 }
